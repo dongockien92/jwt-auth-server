@@ -1,0 +1,8 @@
+Generate keystore:
+D:\JDK\jdk8u221\bin\keytool.exe -keystore keystore.jks -genkey -alias mytestkey -keyalg RSA -dname "CN=Kien, OU=UITGIS, O=UITGIS, L=Ha Noi, ST=Ha Dong, C=HN" -storepass letmein -keypass changeme
+
+Export certificate:
+D:\JDK\jdk8u221\bin\keytool.exe -export -alias mytestkey -keystore keystore.jks -rfc -file public.pem
+
+Export public key:
+openssl x509 -inform pem -in public.pem -pubkey -noout
